@@ -1,0 +1,45 @@
+2019-08-06 19:52:07.379  INFO 7092 --- [restartedMain] life.cwh.community.CommunityApplication  : Starting CommunityApplication on PC-20171101HNWA with PID 7092 (E:\community\target\classes started by Administrator in E:\community)
+2019-08-06 19:52:07.384  INFO 7092 --- [restartedMain] life.cwh.community.CommunityApplication  : No active profile set, falling back to default profiles: default
+2019-08-06 19:52:07.506  INFO 7092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-08-06 19:52:07.506  INFO 7092 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-08-06 19:52:09.556  INFO 7092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-08-06 19:52:09.581  INFO 7092 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-08-06 19:52:09.581  INFO 7092 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.19]
+2019-08-06 19:52:09.587  INFO 7092 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+2019-08-06 19:52:09.588  INFO 7092 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+2019-08-06 19:52:09.588  INFO 7092 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2019-08-06 19:52:09.588  INFO 7092 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2019-08-06 19:52:10.650  INFO 7092 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+2019-08-06 19:52:10.746  INFO 7092 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-08-06 19:52:10.746  INFO 7092 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3239 ms
+2019-08-06 19:52:11.437  INFO 7092 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-08-06 19:52:11.576  INFO 7092 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-08-06 19:52:11.819  INFO 7092 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-08-06 19:52:11.873  INFO 7092 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-08-06 19:52:11.877  INFO 7092 --- [restartedMain] life.cwh.community.CommunityApplication  : Started CommunityApplication in 5.332 seconds (JVM running for 6.377)
+2019-08-06 19:52:17.522  INFO 7092 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-08-06 19:52:17.523  INFO 7092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-08-06 19:52:17.536  INFO 7092 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-08-06 19:52:17.610  INFO 7092 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-08-06 19:52:17.808  INFO 7092 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-08-06 19:52:17.819 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.QuestionExtMapper.countBySearch  : ==>  Preparing: select count(*) from question 
+2019-08-06 19:52:17.838 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.QuestionExtMapper.countBySearch  : ==> Parameters: 
+2019-08-06 19:52:17.853 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.QuestionExtMapper.countBySearch  : <==      Total: 1
+2019-08-06 19:52:17.855 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.Q.selectBySearch                 : ==>  Preparing: select * from question order by gmt_create desc limit ?,? 
+2019-08-06 19:52:17.856 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.Q.selectBySearch                 : ==> Parameters: 0(Integer), 5(Integer)
+2019-08-06 19:52:17.862 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.Q.selectBySearch                 : <==      Total: 5
+2019-08-06 19:52:17.863 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user where id = ? 
+2019-08-06 19:52:17.864 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 45(Long)
+2019-08-06 19:52:17.866 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-08-06 19:52:17.872 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user where id = ? 
+2019-08-06 19:52:17.873 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 45(Long)
+2019-08-06 19:52:17.874 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-08-06 19:52:17.875 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user where id = ? 
+2019-08-06 19:52:17.876 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 43(Long)
+2019-08-06 19:52:17.878 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-08-06 19:52:17.878 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user where id = ? 
+2019-08-06 19:52:17.879 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 43(Long)
+2019-08-06 19:52:17.881 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
+2019-08-06 19:52:17.882 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==>  Preparing: select id, account_id, name, token, gmt_create, gmt_modified, avatar_url from user where id = ? 
+2019-08-06 19:52:17.882 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : ==> Parameters: 43(Long)
+2019-08-06 19:52:17.883 DEBUG 7092 --- [http-nio-8080-exec-1] l.c.c.m.UserMapper.selectByPrimaryKey    : <==      Total: 1
