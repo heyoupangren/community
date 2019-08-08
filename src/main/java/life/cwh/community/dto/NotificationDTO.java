@@ -1,6 +1,5 @@
 package life.cwh.community.dto;
 
-import life.cwh.community.model.User;
 import lombok.Data;
 
 /**
@@ -15,7 +14,7 @@ public class NotificationDTO {
     private Long notifier;
     private String notifierName;
     private String outerTitle;
-    private Long outerid;
+    private Long outerId;
     private String typeName;
     private Integer type;
 }

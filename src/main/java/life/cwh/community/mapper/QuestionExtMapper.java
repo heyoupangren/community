@@ -2,9 +2,6 @@ package life.cwh.community.mapper;
 
 import life.cwh.community.dto.QuestionQueryDTO;
 import life.cwh.community.model.Question;
-import life.cwh.community.model.QuestionExample;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.session.RowBounds;
 
 import java.util.List;
 

@@ -7,7 +7,6 @@ import life.cwh.community.enums.NotificationTypeEnum;
 import life.cwh.community.exception.CustomizeErrorCode;
 import life.cwh.community.exception.CustomizeException;
 import life.cwh.community.mapper.NotificationMapper;
-import life.cwh.community.mapper.UserMapper;
 import life.cwh.community.model.Notification;
 import life.cwh.community.model.NotificationExample;
 import life.cwh.community.model.User;
