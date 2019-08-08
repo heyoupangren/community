@@ -1,10 +1,7 @@
 package life.cwh.community.controller;
 
-import javafx.concurrent.Task;
 import life.cwh.community.cache.TagCache;
 import life.cwh.community.dto.QuestionDTO;
-import life.cwh.community.dto.TagDTO;
-import life.cwh.community.mapper.QuestionMapper;
 import life.cwh.community.model.Question;
 import life.cwh.community.model.User;
 import life.cwh.community.service.QuestionService;
