@@ -21,7 +21,7 @@ public class UserService {
     public void createOrUpdate(User user) {
         UserExample userExample = new UserExample();
         userExample.createCriteria()
-                .andTokenEqualTo(user.getAccountId());
+                .andAccountIdEqualTo(user.getAccountId());
         List<User> users = userMapper.selectByExample(userExample);
         if(users.size() == 0){//数据库中没有该AccountId，在数据库中插入数据
             user.setGmtCreate(System.currentTimeMillis());

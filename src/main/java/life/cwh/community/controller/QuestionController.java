@@ -29,8 +29,9 @@ public class QuestionController {
     @GetMapping("/question/{id}")
     public String question(@PathVariable(name = "id") Long id, Model model) {
         QuestionDTO questionDTO = questionService.getById(id);
-
+        //查找标签的相关问题
         List<QuestionDTO> relatedQuestions = questionService.selectRelated(questionDTO);
+        //查找回复
         List<CommentDTO> comments = commentService.listByTargetId(id, CommentTypeEnum.QUESTION);
 
         //累加浏览次数

@@ -90,7 +90,7 @@ public class CommentService {
 
 
     //创建通知
-    private void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerId) {
+    private void createNotify(Comment comment, Long receiver, String notifierName, String outerTitle, NotificationTypeEnum notificationType, Long outerid) {
         //如果评论人和发布人是同一个人，就不用通知
         if(receiver == comment.getCommentator()){
             return;
@@ -98,7 +98,7 @@ public class CommentService {
         Notification notification = new Notification();
         notification.setGmtCreate(System.currentTimeMillis());
         notification.setType(notificationType.getType());
-        notification.setOuterid(outerId);
+        notification.setOuterid(outerid);
         notification.setNotifier(comment.getCommentator());
         notification.setStatus(NotificationStatusEnum.UNREAD.getStatus());
         notification.setReceiver(receiver);

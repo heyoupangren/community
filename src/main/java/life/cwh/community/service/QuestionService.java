@@ -38,7 +38,7 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
-    public PagenationDTO list(String search,Integer page, Integer size) {
+    public PagenationDTO list(String search, String tag, Integer page, Integer size) {
         //判断search中是否有内容
         if(StringUtils.isNotBlank(search)){
             String[] tags = StringUtils.split(search, " ");
@@ -51,6 +51,7 @@ public class QuestionService {
         //查询总页数
         QuestionQueryDTO questionQueryDTO = new QuestionQueryDTO();
         questionQueryDTO.setSearch(search);
+        questionQueryDTO.setTag(tag);
 
         Integer totalCount =questionExtMapper.countBySearch(questionQueryDTO);
 
@@ -72,7 +73,7 @@ public class QuestionService {
 
         //size*(page-1)
         pagenationDTO.setPagenation(totalPage,page);
-        Integer offset = size *(page -1);
+        Integer offset =page < 1 ? 0 : size *(page -1);
         questionQueryDTO.setSize(size);
         questionQueryDTO.setPage(offset);
         List<Question> questionList = questionExtMapper.selectBySearch(questionQueryDTO);
@@ -195,16 +196,18 @@ public class QuestionService {
     }
 
     public List<QuestionDTO> selectRelated(QuestionDTO queryDTO) {
-
+        //判断tag标签是否为空
         if(StringUtils.isBlank(queryDTO.getTag())){
             return new ArrayList<>();
         }
+        //将tag标签分离开来，放在tags数组中
         String[] tags = StringUtils.split(queryDTO.getTag(), ",");
+        //将tags数组中的标签使用|加在两个标签中间，放在repexpTag中
         String regexpTag = Arrays.stream(tags).collect(Collectors.joining("|"));
         Question question = new Question();
         question.setId(queryDTO.getId());
         question.setTag(regexpTag);
-
+        //根据标签查询问题
         List<Question> questions = questionExtMapper.selectRelated(question);
         List<QuestionDTO> questionDTOS = questions.stream().map(q -> {
             QuestionDTO questionDTO = new QuestionDTO();
