@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>教学视频</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/css/community.css">
+    <script src="/js/jquery.min.js" type="application/javascript"></script>
+    <script src="/js/bootstrap.min.js" type="application/javascript"></script>
+</head>
+<body>
+<div th:insert="~{navigation :: nav}"></div>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12 video">
+            <a href="/video?page=1&aid=61820222"><img src="/images/wechat.png" alt=""/></a>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12 video">
+            <a href="/video/11"><img src="/images/wechat.png" alt=""/></a>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12 video">
+            <a href="/video/11"><img src="/images/wechat.png" alt=""/></a>
+        </div>
+    </div>
+</div>
+<div th:insert="~{footer :: foot}"></div>
+</body>
+</html>
